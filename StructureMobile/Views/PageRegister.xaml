@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+         
+             xmlns:vm="clr-namespace:StructureMobile.ViewModels"
+             x:Class="StructureMobile.Views.PageRegister">
+    
+    
+    
+        
+      <ContentPage.Resources>
+        <ResourceDictionary>
+            <vm:ViewModelPageRegister x:Key="vm"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    
+    <ContentPage.Content>
+        
+         
+    <StackLayout VerticalOptions="Center" 
+                 Margin="20,0,20,0"
+                 BindingContext="{Binding Source={StaticResource vm}}"
+                 >
+        <Entry Placeholder="Name"
+                 
+                Text="{Binding Path=PersoneName}"/>
+            <Label Text="{Binding Path=PersoneName}" />
+       
+        <Entry Placeholder="Passeword"
+                 IsPassword="true"
+                 Text="{Binding PersonePasseword, Mode=TwoWay}"/>
+            
+            <Entry Placeholder="Age"
+                 
+                Text="{Binding PersoneAge, Mode=TwoWay}"/>
+            
+        <Button x:Name="Register" Text="Register" 
+                Margin="0,50,0,0"
+                 Command="{Binding Source={StaticResource vm}, Path=SavePersonCommand}"
+                 />
+           
+           
+    </StackLayout>
+        
+    </ContentPage.Content>
+    
+</ContentPage>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:local="clr-namespace:StructureMobile"
+              xmlns:vm="clr-namespace:StructureMobile.ViewModels"
+              xmlns:behaviors="clr-namespace:StructureMobile.Behaviors"
+             x:Class="StructureMobile.Views.MainPage">
+   
+    
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <vm:ViewModelMainPage x:Key="vm"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+   
+     
+     <ContentPage.ToolbarItems>
+        <ToolbarItem Icon="add.png"
+                     Command="{Binding Source={StaticResource vm}, Path=AddProductCommand}"/>
+        
+         <ToolbarItem Text="LogOut" 
+                     Command="{Binding Source={StaticResource vm}, Path=LogOutCommand}"/>
+    
+        </ContentPage.ToolbarItems>
+        
+        
+    <ContentPage.Content>
+        <ListView ItemsSource="{Binding Source={StaticResource vm},Path=Products}">
+            
+           <ListView.Behaviors>
+                <behaviors:ListViewBehavior/>    
+           </ListView.Behaviors>
+            
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding Name}"
+                                Detail="{Binding Description}" />
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        
+   
+    </ContentPage.Content>
+    
+    
+</ContentPage>

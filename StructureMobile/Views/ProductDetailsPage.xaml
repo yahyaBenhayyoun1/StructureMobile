@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+              xmlns:vm="clr-namespace:StructureMobile.ViewModels"
+             x:Class="StructureMobile.Views.ProductDetailsPage"
+             Title="test">
+   
+    
+    
+        
+ <ContentPage.Resources>
+        
+        <ResourceDictionary>
+            <vm:ViewModelDetailsPage x:Key="vm"/>
+            
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    
+   <StackLayout BindingContext="{Binding Source={StaticResource vm}}"
+               Margin="16,16,16,0"
+                >
+    
+    <Label Text="{Binding Product.Name}" />
+    
+     <Label Text="{Binding Product.Description}" />
+    
+     <Label Text="{Binding Product.Price}" />   
+     
+    </StackLayout>
+    
+    
+</ContentPage>

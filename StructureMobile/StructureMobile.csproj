@@ -1,0 +1,42 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>pdbonly</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Xamarin.Forms" Version="3.3.0.967583" />
+    <PackageReference Include="sqlite-net-pcl" Version="1.5.231" />
+    <PackageReference Include="Xam.Plugin.Media" Version="4.0.1.5" />
+    <PackageReference Include="Plugin.Permissions" Version="3.0.0.12" />
+    <PackageReference Include="Xam.Plugins.Settings" Version="3.1.1" />
+    <PackageReference Include="System.Linq" Version="4.3.0" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.0.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Views\" />
+    <Folder Include="ViewModels\" />
+    <Folder Include="Models\" />
+    <Folder Include="Interface\" />
+    <Folder Include="Services\" />
+    <Folder Include="Behaviors\" />
+    <Folder Include="Utils\" />
+    <Folder Include="CustomRender\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Views\PageLogIn.cs" />
+    <Compile Remove="ViewModels\NewExpensePage.cs" />
+    <Compile Remove="Custom Renderers\RenderersButton.cs" />
+    <Compile Remove="Dependenceservice\IOpenGalerie.cs" />
+    <Compile Remove="Views\ProductDetailsVM.cs" />
+    <Compile Remove="..\..\..\Git\MyPage.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Remove="ViewModels\ViewModelUploadImagePage.xaml" />
+  </ItemGroup>
+</Project>

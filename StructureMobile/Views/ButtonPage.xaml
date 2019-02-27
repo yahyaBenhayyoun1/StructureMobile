@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:custom="clr-namespace:StructureMobile;assembly=StructureMobile"
+             x:Class="StructureMobile.Views.ButtonPage">
+    
+    
+    <ContentPage.Content>
+        
+        <StackLayout>
+        <custom:MyButton Text="In Shared Code" />
+          
+          <Button Text="Button non Custom"  />
+          
+        </StackLayout>
+        
+    </ContentPage.Content>
+    
+</ContentPage>

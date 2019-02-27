@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:StructureMobile.ViewModels"
+             xmlns:customrender="clr-namespace:StructureMobile;assembly=StructureMobile"
+             x:Class="StructureMobile.Views.PageLogIn"
+             
+             NavigationPage.HasBackButton="False">
+    
+    
+    
+      <ContentPage.Resources>
+        
+        
+        <ResourceDictionary>
+            <vm:ViewModelPageLogIn x:Key="vm"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    
+    <ContentPage.Content>
+        
+         <ScrollView>
+    <StackLayout VerticalOptions="Center" 
+                 Margin="20,0,20,0"
+                 BindingContext="{Binding Source={StaticResource vm}}"
+                 >
+        <Entry Placeholder="Name"
+
+                Text="{Binding PersonName, Mode=TwoWay}"/>
+       
+        <Entry Placeholder="Passeword"
+                 IsPassword="true"
+                 Text="{Binding PersonPasseword}"/>
+            
+                
+           <!--<Frame CornerRadius="10" Padding="5">
+                    <StackLayout>
+                        <Label Text="{Binding title}" VerticalOptions="Start"/>
+                        <StackLayout Orientation="Horizontal" VerticalOptions="Start">
+                            <Image Source="{Binding Source}" HeightRequest="10" HorizontalOptions="Start"/>
+                             <Label Text="{Binding date}" VerticalOptions="Start"/>
+                            </StackLayout>
+                         <Label Text="{Binding descritpion}" VerticalOptions="Start"/>
+                   </StackLayout>
+            </Frame>-->
+
+                <Button Text="Log In" 
+                Margin="0,50,0,0"
+                 Command="{Binding Source={StaticResource vm}, Path=LogInCommande}"
+                 />
+                                
+                <Button  Text="Register" 
+                Margin="0,50,0,0"
+                 Command="{Binding Source={StaticResource vm}, Path=RegisterCommande}"
+                />
+   
+                <Button  Text="DepService" 
+                Margin="0,50,0,0"
+                 Command="{Binding Source={StaticResource vm}, Path=OpenDepService}"
+                />
+                
+                 <Button Text="Upload Image" 
+                Margin="0,50,0,0"
+                 Command="{Binding Source={StaticResource vm}, Path=UploadImageCommande}"
+                />
+                
+                 <Button Text="Custom Renderer" 
+                Margin="0,50,0,0"
+                 Command="{Binding Source={StaticResource vm}, Path=ButtonCommande}"
+                />
+                
+                    <Button Text="Geolocation" 
+                Margin="0,50,0,0"
+                 Command="{Binding Source={StaticResource vm}, Path=GeolocationCommande}"
+                />
+                
+    </StackLayout>
+        
+            
+            </ScrollView>
+    </ContentPage.Content>
+    
+    
+</ContentPage>
